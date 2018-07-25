@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="content">
+    <div class="row">
+      <div class="col-sm-6" *ngFor="let product of productList">
+          <div class="card">
+              <img class="card-img-top" src="{{ product.img }}" alt="{{ product.title }}">
+              <div class="card-body">
+                <h5 class="card-title text-center">{{ product.title }}</h5>
+                <p class="card-text">{{ product.category }}</p>
+                <a href="#" class="btn btn-success">Go somewhere</a>
+                <span class="price  pull-xs-right tag tag-pill tag-primary">{{ product.price }}$</span>                
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+  <div class="saleBlock">
+      <div class="col-sm-6" *ngFor="let saleProduct of saleProducts">
+          <div class="card">
+              <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title text-center">{{ saleProduct.title }}</h5>
+                <p class="card-text">buy 3 for the price of 2</p>
+                <a href="#" class="btn btn-success">Go somewhere</a>
+                <span class="price">{{ saleProduct.price }}$</span>                
+              </div>
+            </div>
+      </div>
+  </div>
+</div>
