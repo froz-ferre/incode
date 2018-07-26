@@ -7,7 +7,7 @@
               <div class="card-body">
                 <h5 class="card-title text-center">{{ product.title }}</h5>
                 <p class="card-text">{{ product.category }}</p>
-                <a href="#" class="btn btn-success">Go somewhere</a>
+                <button class="btn btn-success" (click)="addToCart(product)" >Add to cart</button>
                 <span class="price  pull-xs-right tag tag-pill tag-primary">{{ product.price }}$</span>                
               </div>
             </div>
