@@ -2,16 +2,16 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Store</a>
+    <a class="navbar-brand" routerLink="/store" >Store</a>
     
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         </ul>
       </div>
-      <button class="btn btn-dark text-right">
+      <button class="btn btn-dark text-right" routerLink="/cart" >
         <span class="badge badge-light" *ngIf="cart.items.length > 0" >{{ cart.items.length }}</span>
         <i class="fas fa-shopping-cart"></i>
         cart
       </button>
 </nav>
-<app-store></app-store>
+<router-outlet></router-outlet>
