@@ -35,4 +35,9 @@ export class CartComponent implements OnInit {
     this.router.navigate(['/store']);
   }
 
+  confirm(): void {
+    this.clearCart();
+    this.continueShopping();
+  }
+
 }

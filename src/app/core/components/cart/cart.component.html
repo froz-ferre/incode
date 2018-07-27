@@ -26,8 +26,12 @@
       <td>{{ item.itemTotalSum }}</td>
       <td> <button class="btn btn-danger" (click)="deleteItem(item)">X</button></td>
     </tr>
+    <tr>
+      <td>Total items: {{ cart.items.length }}</td>
+      <td>Total price: {{ cart.cartTotalSum }}</td>
+      <td><button class="btn btn-success" (click)="confirm()">Confirm order</button></td>
+    </tr>
   </tbody>
 </table>
 <button class="btn btn-danger" (click)="clearCart()">Clear cart</button>
 <button class="btn btn-dark" (click)="continueShopping()">Continue shopping</button>
-<button class="btn btn-success">Confirm order</button>

@@ -20,6 +20,12 @@ export class CartService {
     }
   }
 
+  get cartTotalSum(): number {
+    let sum: number = 0;
+    this.items.forEach(item => sum += item.itemTotalSum);
+    return sum;
+  }
+
   delete(item: CartItem): void {
     this.items = this.items.filter(x => x.product.id !== item.product.id);
   }
@@ -34,6 +40,9 @@ export class CartItem {
               public quantity: number) { }
 
   get itemTotalSum() {
+    if (this.product.sale === true && this.quantity >= 3) {
+      return this.product.price * this.quantity - (Math.floor(this.quantity / 3) * this.product.price);
+    }
     return this.product.price * this.quantity;
   }
 }
