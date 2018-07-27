@@ -8,7 +8,7 @@ import { CartGuard } from './guards/cart.guard';
 export const routes: Routes = [
   {path: '', redirectTo: '/store', pathMatch: 'full'},
   {path: 'store', component: StoreComponent},
-  {path: 'cart', component: CartComponent, canActivate: CartGuard},
+{path: 'cart', component: CartComponent, canActivate: [CartGuard]},
   {path: '**', redirectTo: '/store', pathMatch: 'full'}
 ];
 

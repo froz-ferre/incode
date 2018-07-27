@@ -19,6 +19,14 @@ export class CartService {
       return false;
     }
   }
+
+  delete(item: CartItem): void {
+    this.items = this.items.filter(x => x.product.id !== item.product.id);
+  }
+
+  clear(): void {
+    this.items = [];
+  }
 }
 
 export class CartItem {
