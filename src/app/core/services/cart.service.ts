@@ -40,6 +40,7 @@ export class CartItem {
               public quantity: number) { }
 
   get itemTotalSum() {
+    // TODO: Вынести проверку в отдельную функцию
     if (this.product.sale === true && this.quantity >= 3) {
       return this.product.price * this.quantity - (Math.floor(this.quantity / 3) * this.product.price);
     }

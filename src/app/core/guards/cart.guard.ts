@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, CanDeactivate } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CartService } from '../services/cart.service';
-
-export interface ComponentCanDeactivate{
-  canDeactivate: () => boolean | Observable<boolean>;
-}
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +16,4 @@ export class CartGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     return this.cart.items.length > 0;
   }
-
-  // canDeactivate(component: ComponentCanDeactivate): Observable<boolean> | boolean {
-  //   return component.canDeactivate ? component.canDeactivate() : true;
-  // }
 }

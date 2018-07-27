@@ -34,8 +34,8 @@ export class StoreComponent implements OnInit, OnDestroy {
     this.destroy$.unsubscribe();
   }
 
-  addToCart(product: Product) {
-    this.cart.addItem(product);
+  addToCart(product: Product, quantity?: number) {
+    this.cart.addItem(product, quantity);
   }
 
 }
