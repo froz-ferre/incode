@@ -39,11 +39,14 @@ export class CartItem {
   constructor(public product: Product,
               public quantity: number) { }
 
-  get itemTotalSum() {
-    // TODO: Вынести проверку в отдельную функцию
-    if (this.product.sale === true && this.quantity >= 3) {
-      return this.product.price * this.quantity - (Math.floor(this.quantity / 3) * this.product.price);
+  get itemTotalSum(): number {
+    switch (this.product.sale) {
+      case '3for2': {
+        return this.product.price * this.quantity - (Math.floor(this.quantity / 3) * this.product.price);
+      }
+      default: {
+        return this.product.price * this.quantity;
+      }
     }
-    return this.product.price * this.quantity;
   }
 }
